@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Open Source in Education</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheet. Script adds all styles it needs for
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesing things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+
+    <div class="step" data-x="-1100" data-y="-1500">
+        <q>My name is <b><a href="http://lelizondo.tumblr.com/">Luis Elizondo</a></b> and I'm a programmer working at <a href="http://www.iiiepe.edu.mx">IIIEPE (Institute for Research, Innovation and Graduate Studies in Education)</a> in Mexico</q>
+    </div>
+    
+    <div class="step" data-x="0" data-y="-1500">
+        <q><strong>Open Source Software</strong> in Education</q>
+    </div>
+    
+    <div class="step mini" data-x="0" data-y="-2100" data-scale="1">
+    	<q>my perspective</q>
+    </div>
+    
+    <div class="step" data-x="1200" data-y="-2100" data-scale="1">
+    	<p class="big">History</p>
+    </div>
+
+    <div class="title step" data-x="0" data-y="0" data-scale="5">
+        <span class="try">Dan Bricklin and Bob Frankston</span>
+        <h1>Visicalc</h1>
+        <span class="footnote">1979</span>
+    </div>
+    
+    <div class="step" data-x="1550" data-y="50" data-scale="1" data-rotate="-90">
+    	<img src="images/1979-visicalc.gif" />
+    	<img src="images/itfd_visicalc.gif" />
+    </div>
+
+    <div class="title step" data-x="4500" data-y="3000" data-rotate="90" data-scale="5">
+        <h1>Sharing</h1>
+        <p>Internet, email and File Transfer Protocol<br/>
+        </p>
+    </div>
+
+    <div id="big" class="step left" data-x="9000" data-y="2100" data-rotate="180" data-scale="5">
+        <p>Microsoft Windows made it easier to use a computer...</p><br />
+        <img src="images/Windows1.0.png" />
+        <span class="footnote2">1993</span><br />
+    </div>
+    
+    <div class="step left" data-x="11000" data-y="5800" data-rotate="180" data-scale="5">
+        <p>... and Mosaic Web Browser, created by Marc Andreessen, made it easier to surf the web</p>
+        <img src="images/mosaic.png" width="80%"/>
+    </div>
+    
+    <div class="tiny step" data-x="14200" data-y="2325" data-rotate="180" data-scale="2">
+        <p>Richard Stallman (RMS) creates the Free Software Movement in 1983</p><br />
+        <img src="images/800px-Rms_at_pitt.jpg" height="70%" width="70%"/>
+    </div>
+    
+    <div class="step" data-x="17000" data-y="2325" data-scale="1" data-rotate="230">
+    	<p><strong>Four</strong> basic freedoms<br />
+    	the freedom to <strong>run</strong> the software, to <strong>study</strong> and <strong>change</strong> the software,<br />
+    	and to <strong>share</strong> copies of the software</p>
+    </div>
+
+   <div class="step" data-x="17000" data-y="3400" data-scale="3" data-rotate="230">
+   	<p>You can create high quality software using this method like</p>
+   	<ul>
+   		<li>- Apache HTTP Server</li>
+   		<li>- Linux</li>
+   	</ul>
+   </div>
+   
+   <div class="step" data-x="23000" data-y="3700" data-scale="3" data-rotate="0">
+   	<p>... used by Governments, airplanes, submarines, phones or companies like</p><br />
+   	<p>Facebook, Google, Wikipedia, Twitter, Yahoo, Universities, CERN, and many more...</p>
+   </div>
+   
+  <div class="step" data-x="26000" data-y="3000" data-scale="1">
+        <q>Software made the World more <strong>productive</strong></q>
+  </div>
+   
+   <div class="step" data-x="26000" data-y="3700" data-scale="1">
+   	<p>In any business, productivity usually means more money... </p>
+   </div>
+   
+   <div class="step" data-x="27500" data-y="3000" data-scale="1">
+   	<p>... schools are different</p>
+   </div>
+   
+   <div class="step" data-x="27500" data-y="3700" data-scale="1">
+   	<p>If we accept the idea that software can help both the teacher and the student, it will be easier to justify the investment required in hardware and software.</p>
+   </div>
+   
+   <div class="step title" data-x="27000" data-y="4300" data-scale="1">
+   	<p>Good news</p>
+   	<p class="big"><strong>Open Source Software is Free</strong></p>
+   	<p>No Licenses. No Limits.</p>
+   </div>
+   
+   <div class="step title" data-x="27500" data-y="4730" data-scale="2">
+   	<p class="big">Web software</p>
+   	<p class="mini">Google Apps for Education is also free!</p>
+   </div>
+
+	<div class="step" data-x="30000" data-y="5000" data-rotate="90" data-scale="1">
+		<p class="big">Open Data</p>
+		<p class="mini">Applying the spirit of Open Source Software to Knowledge and Data</p>
+	</div>
+	
+	<div class="step" data-x="29000" data-y="5000" data-rotate="90" data-scale="1">
+		<p class="big">Sharing problems and solutions</p>
+		<p class="mini">Software Developers, Doctors and Scientists do it all the time</p>
+	</div>
+	
+	<div class="step" data-x="32000" data-y="2000" data-rotate="90" data-scale="2">
+		<p class="big">What are we doing at IIIEPE?</p>
+		<p class="mini">A few examples on how we use Open Source Software and Open Data to improve Education</p>
+	</div>
+
+	<div class="step" data-x="32000" data-y="5000" data-rotate="90" data-scale="2">
+		<p class="big">EVA</p>
+		<p class="mini">Learning without going to the classroom</p>
+		<p class="mini-2">Schools can have a free learning platform and students can benefit from it</p>
+	</div>
+	
+	<div class="step image" data-x="34000" data-y="5000" data-rotate="90" data-scale="2">
+		<img src="images/eva.png" />
+	</div>
+   
+  <div class="step" data-x="32000" data-y="8000" data-rotate="90" data-scale="2">
+		<p class="big">SiaEducacion</p>
+		<p class="mini">Digital Repository and Community</p>
+		<p class="mini-2">Teachers share data more easily and have a platform where they can work</p>
+	</div>
+	
+	<div class="step image" data-x="34000" data-y="8000" data-rotate="90" data-scale="2">
+		<img src="images/coleccion.png" />
+	</div>
+	
+	<div class="step image" data-x="34000" data-y="11000" data-rotate="90" data-scale="2">
+		<img src="images/com1.png" />
+	</div>
+	
+	<div class="step image" data-x="34000" data-y="14000" data-rotate="90" data-scale="2">
+		<img src="images/com2.png" />
+	</div>
+	
+	<div class="step image" data-x="34000" data-y="17000" data-rotate="90" data-scale="2">
+		<img src="images/com3.png" />
+	</div>
+	
+	<!--
+	<div class="step" data-x="35000" data-y="7000" data-rotate="0" data-scale="5">
+		<p class="big">Education as an equalizer</p>
+		<p class="mini">Open Source can reduce costs and Open Data can provide world-class education to everyone</p>
+	</div>
+	-->
+
+	<div class="step" data-x="35000" data-y="25000" data-rotate="0" data-scale="3">
+		<p class="big">Thanks</p>
+		<p class="mini">http://twitter.com/lelizondo</p>
+		<p class="mini">luis.elizondo@iiiepe.edu.mx</p>
+		<p class="mini">www.iiiepe.edu.mx</p>
+	</div>
+	
+    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+    </div>
+
+</div>
+
+<!--
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    // document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</body>
+</html>
+
